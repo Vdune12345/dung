@@ -1,0 +1,163 @@
+<html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web HTML5 Cơ Bản</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        header, nav, aside, main, footer {
+            background-color: #dfdfdf;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        header {
+            text-align: center;
+            color: #0066cc;
+        }
+        header img {
+            max-width: 100%;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 15px;
+        }
+        aside {
+            flex: 1;
+            color: #0066cc;
+        }
+        main {
+            flex: 3;
+            color: #0066cc;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .login-form input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form button {
+            padding: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .article {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            color: #333;
+        }
+        .article img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            background-color: #bbb;
+        }
+        footer {
+            text-align: center;
+            color: #0066cc;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="https://via.placeholder.com/1000x100.png?text=Ảnh+Banner" alt="Banner Website">
+        <h1>Tiêu đề Trang Web (Banner)</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <aside>
+            <h2 style="text-align: center; font-size: 22px;">Sidebar-left</h2>
+            <p style="text-align: center; font-style: italic;">(Form đăng nhập)</p>
+            
+            <form class="login-form" action="#" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email..." required>
+                
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu..." minlength="6" required>
+                
+                <button type="submit">Đăng nhập</button>
+            </form>
+        </aside>
+
+        <main>
+            <h2 style="text-align: center; font-size: 26px;">Body Area</h2>
+            <p style="text-align: center; font-style: italic;">(Có ảnh đại diện cho bài viết)</p>
+
+            <div class="article">
+                <img src="https://via.placeholder.com/120.png?text=Ảnh+1" alt="Ảnh bài viết 1">
+                <div>
+                    <h3>Tiêu đề bài viết số 1</h3>
+                    <p>Đây là nội dung tóm tắt của bài viết thứ nhất. Bạn có thể thay đổi đoạn text này sao cho phù hợp với chủ đề trang web.</p>
+                </div>
+            </div>
+
+            <div class="article">
+                <img src="https://via.placeholder.com/120.png?text=Ảnh+2" alt="Ảnh bài viết 2">
+                <div>
+                    <h3>Tiêu đề bài viết số 2</h3>
+                    <p>Đây là nội dung tóm tắt của bài viết thứ hai. Hình ảnh bên trái đóng vai trò là ảnh đại diện (thumbnail) cho bài viết.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        Họ tên sinh viên: [Nguyễn Vy Chí Dũng] – Lớp: [TT1D24]
+    </footer>
+</div>
+</body>
+</html>
