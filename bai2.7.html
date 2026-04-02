@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sinh viên</title>
+    <style>
+        /* Reset cơ bản */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; font-size: 13px; }
+        body { padding: 20px; background: #f4f4f4; }
+        
+        /* Layout tổng thể bằng Grid */
+        .wrapper {
+            max-width: 900px; margin: auto; background: white; border: 1px solid #ccc;
+            display: grid;
+            grid-template-columns: 150px 1fr 200px;
+        }
+
+        header, footer { grid-column: 1 / -1; text-align: center; }
+        header { background: #1a3b8a; color: white; padding: 15px; font-weight: bold; line-height: 1.5; }
+        footer { background: #e0e0e0; padding: 15px; font-style: italic; }
+
+        .left-menu, .center-content, .right-sidebar { padding: 10px; border-right: 1px solid #ccc; }
+        .right-sidebar { border-right: none; text-align: center; }
+        .left-menu a { display: block; padding: 8px 0; text-decoration: none; color: #333; border-bottom: 1px dotted #ccc; }
+        .box-title { background: #4a76c4; color: white; text-align: center; padding: 5px; font-weight: bold; margin-bottom: 10px; }
+
+        .form-grid { display: grid; grid-template-columns: 100px 1fr; gap: 5px 10px; align-items: center; margin-bottom: 10px;}
+        .form-grid input { padding: 3px; border: 1px solid #ccc; width: 100%; }
+        .form-actions { text-align: center; margin-bottom: 20px; grid-column: 1 / -1;}
+        .form-actions button { padding: 3px 15px; margin: 0 5px; cursor: pointer; }
+
+        /* --- BẢNG DỮ LIỆU ĐÃ TỐI ƯU ĐỂ CHÈN ẢNH --- */
+        .data-grid { 
+            display: grid; 
+            grid-template-columns: 40px 70px 1fr 80px 80px; /* Tăng cột Hình lên 80px */
+            border-top: 1px solid #ccc; border-left: 1px solid #ccc; text-align: center;
+        }
+        
+        /* Căn giữa chữ và ảnh trong các ô */
+        .data-grid > div { 
+            border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px; 
+            display: flex; align-items: center; justify-content: center; 
+        }
+        .data-grid .head { font-weight: bold; background: #f9f9f9; }
+
+        /* Tự động thu gọn và làm vuông ảnh để không vỡ bố cục */
+        .img-sv {
+            width: 45px; 
+            height: 45px; 
+            object-fit: cover; 
+            border: 1px solid #ddd;
+        }
+
+        .icons { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; }
+        .icon { width: 40px; height: 50px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 3px; }
+        .icon.html { background: #e34c26; } .icon.css { background: #264de4; }
+        .right-sidebar p, .right-sidebar a { margin-bottom: 10px; display: block; font-size: 12px;}
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        KHOA CÔNG NGHỆ THÔNG TIN - TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP VIỆT TRÌ<br>
+        CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN
+    </header>
+
+    <nav class="left-menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Quản lý sinh viên</a>
+        <a href="#">Quản lý điểm</a>
+        <a href="#">Quản lý lớp học</a>
+        <a href="#">Quản lý khoa</a>
+        <a href="#">Quản lý người dùng</a>
+        <a href="#">Chức năng khác</a>
+    </nav>
+
+    <main class="center-content">
+        <div class="box-title">THÊM SINH VIÊN</div>
+        <div class="form-grid">
+            <label>Mã sinh viên:</label> <input type="text">
+            <label>Họ tên:</label> <input type="text">
+            <label>Ngày sinh:</label> <input type="text">
+            <label>Hình:</label> 
+            <div style="display: flex; gap: 5px;">
+                <input type="text" style="flex: 1;"> <button>Browse...</button>
+            </div>
+            <div class="form-actions">
+                <button>Add</button> <button>Update</button> <button>Save</button>
+            </div>
+        </div>
+
+        <div class="box-title">THÔNG TIN SINH VIÊN</div>
+        <div class="data-grid">
+            <div class="head">STT</div> <div class="head">MASV</div> <div class="head">Họ tên</div> <div class="head">Ngày sinh</div> <div class="head">Hình</div>
+            
+            <div>1</div> <div>TH09</div> <div>Nguyễn Lan</div> <div>1/1/2004</div> 
+            <div><img src="https://afamilycdn.com/150157425591193600/2021/4/2/img4304-1616982604107708388984-1617352423414-16173524259771681459176.jpg" alt="h1" class="img-sv"></div>
+            
+            <div>2</div> <div>TH89</div> <div>Thanh Nhàn</div> <div>1/8/2004</div> 
+            <div><img src="https://www.minhtunailspa.com/wp-content/uploads/2025/11/anh-hoc-sinh-nu-cap-3-cuc-xinh-de-thuong-36.webp" alt="h2" class="img-sv"></div>
+ 
+
+
+        </div>
+    </main>
+
+    <aside class="right-sidebar">
+        <div class="icons">
+            <div class="icon html">HTML</div>
+            <div class="icon css">CSS</div>
+        </div>
+        <p>Lớp chuyên đề về HTML và CSS: trang bị kiến thức cơ bản về xây dựng cấu trúc và định dạng trang web bằng HTML và CSS.</p>
+        <a href="#">Thông báo về lịch thi học kì</a>
+        <a href="#">Nhịp sống trẻ</a>
+    </aside>
+
+    <footer>
+        Khoa Công nghệ thông tin - Số 9 Tiên Sơn, Phường Thanh Miếu, Tỉnh Phú Thọ<br>
+        Email: khcntt@vui.edu.vn
+    </footer>
+</div>
+
+</body>
+</html>
